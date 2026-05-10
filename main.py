@@ -17,4 +17,11 @@ def encode(text):
 
         combined = (byte1 << 16) | (byte2 << 8) | byte3
 
+index1 = (combined >> 18) & 63
+        index2 = (combined >> 12) & 63
+        index3 = (combined >> 6) & 63
+        index4 = combined & 63
+
+        result += BASE64_TABLE[index1]
+        result += BASE64_TABLE[index2]
 
