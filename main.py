@@ -37,3 +37,8 @@ def encode(text):
 
     return result
 
+#Bardhi
+
+
+#Jakup
+
