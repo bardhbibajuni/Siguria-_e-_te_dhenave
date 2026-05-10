@@ -57,5 +57,19 @@ def decode(base64_text):
 
         combined = (index1 << 18) | (index2 << 12) | (index3 << 6) | index4
 
+        byte1 = (combined >> 16) & 255
+        byte2 = (combined >> 8) & 255
+        byte3 = combined & 255
+
+        result_bytes.append(byte1)
+
+        if padding < 2:
+            result_bytes.append(byte2)
+
+        if padding < 1:
+            result_bytes.append(byte3)
+
+    return result_bytes.decode("utf-8")
+
 #Jakup
 
