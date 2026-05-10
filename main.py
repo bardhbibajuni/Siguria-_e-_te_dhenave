@@ -37,8 +37,25 @@ def encode(text):
 
     return result
 
-#Bardhi
 
+def decode(base64_text):
+
+    result_bytes = bytearray()
+
+    for i in range(0, len(base64_text), 4):
+
+        block = base64_text[i:i + 4]
+
+        padding = block.count("=")
+
+        block = block.replace("=", "A")
+
+        index1 = BASE64_TABLE.index(block[0])
+        index2 = BASE64_TABLE.index(block[1])
+        index3 = BASE64_TABLE.index(block[2])
+        index4 = BASE64_TABLE.index(block[3])
+
+        combined = (index1 << 18) | (index2 << 12) | (index3 << 6) | index4
 
 #Jakup
 
