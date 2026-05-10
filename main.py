@@ -71,5 +71,42 @@ def decode(base64_text):
 
     return result_bytes.decode("utf-8")
 
-#Jakup
+while True:
+
+    print("\n BASE64 PROGRAM ")
+    print("1. Encoding")
+    print("2. Decoding")
+
+    choice = input("Choose option: ")
+
+    if choice == "1":
+
+        text = input("Write text for encoding: ")
+
+        encoded = encode(text)
+
+        print("\nEncoded text:")
+        print(encoded)
+
+    elif choice == "2":
+
+        text = input("Write Base64 text for decoding: ")
+
+        decoded = decode(text)
+
+        print("\nDecoded text:")
+        print(decoded)
+
+    else:
+
+        print("Invalid option!")
+        continue
+
+    exit_choice = input("\nDo you want to exit? : ")
+
+    if exit_choice.lower() == "yes":
+
+        print("Program closed.")
+        break
+
 
